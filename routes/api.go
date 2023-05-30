@@ -11,5 +11,6 @@ func InitAPI(r *gin.Engine) {
 	{
 		api.GET("/foots", controllers.GetFoots)
 		api.GET("/projects", controllers.GetProjects)
+		api.GET("/project_contributors", controllers.GetProjectContributors)
 	}
 }

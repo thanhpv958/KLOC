@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"kloc-go/config/db"
+	"kloc-go/helpers"
 	"kloc-go/models"
 	"net/http"
 
@@ -19,4 +20,9 @@ func GetProjects(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"data": projects})
+}
+
+func GetProjectContributors(c *gin.Context) {
+	authorStatsSlice := helpers.GetGitData()
+	c.JSON(http.StatusOK, gin.H{"data": authorStatsSlice})
 }
